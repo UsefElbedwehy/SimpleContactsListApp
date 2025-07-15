@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleContactsListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="4"/>
+        </scene>
+        <!--Add Contact View Controller-->
+        <scene sceneID="lhA-5W-J67">
+            <objects>
+                <viewController storyboardIdentifier="AddContact" id="DxT-PU-k7Q" customClass="AddContactViewController" customModule="SimpleContactsListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ep7-dz-SLf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXv-oQ-eAT">
+                                <rect key="frame" x="30" y="98" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTg-3u-Pax">
+                                <rect key="frame" x="30" y="209" width="333" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoB-yq-Qzy">
+                                <rect key="frame" x="30" y="183" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJh-rU-IeO">
+                                <rect key="frame" x="30" y="124" width="333" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wID-6e-u1X"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jXv-oQ-eAT" firstAttribute="leading" secondItem="ep7-dz-SLf" secondAttribute="leading" constant="30" id="4N8-qV-QSn"/>
+                            <constraint firstItem="hJh-rU-IeO" firstAttribute="top" secondItem="jXv-oQ-eAT" secondAttribute="bottom" constant="5" id="8FB-uk-T5y"/>
+                            <constraint firstItem="MTg-3u-Pax" firstAttribute="top" secondItem="AoB-yq-Qzy" secondAttribute="bottom" constant="5" id="I21-CD-e2a"/>
+                            <constraint firstItem="wID-6e-u1X" firstAttribute="trailing" secondItem="hJh-rU-IeO" secondAttribute="trailing" constant="30" id="RK0-Eu-ERK"/>
+                            <constraint firstItem="wID-6e-u1X" firstAttribute="trailing" secondItem="MTg-3u-Pax" secondAttribute="trailing" constant="30" id="RtR-P4-H1l"/>
+                            <constraint firstItem="wID-6e-u1X" firstAttribute="top" secondItem="jXv-oQ-eAT" secondAttribute="top" constant="20" id="SvJ-0I-G6e"/>
+                            <constraint firstItem="AoB-yq-Qzy" firstAttribute="top" secondItem="hJh-rU-IeO" secondAttribute="bottom" constant="25" id="TjH-u6-DHo"/>
+                            <constraint firstItem="wID-6e-u1X" firstAttribute="trailing" secondItem="AoB-yq-Qzy" secondAttribute="trailing" constant="30" id="WRc-2o-H8T"/>
+                            <constraint firstItem="hJh-rU-IeO" firstAttribute="leading" secondItem="wID-6e-u1X" secondAttribute="leading" constant="30" id="YU1-jT-wge"/>
+                            <constraint firstItem="MTg-3u-Pax" firstAttribute="leading" secondItem="wID-6e-u1X" secondAttribute="leading" constant="30" id="cMh-YG-q9i"/>
+                            <constraint firstAttribute="trailing" secondItem="jXv-oQ-eAT" secondAttribute="trailing" constant="30" id="qAr-TM-0ha"/>
+                            <constraint firstItem="AoB-yq-Qzy" firstAttribute="leading" secondItem="wID-6e-u1X" secondAttribute="leading" constant="30" id="wcM-LB-tNh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="hJh-rU-IeO" id="IhX-Fb-WPU"/>
+                        <outlet property="phoneTextField" destination="MTg-3u-Pax" id="iTo-xp-tDY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CAz-Dw-KpE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.89312977099235" y="-92.253521126760575"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
