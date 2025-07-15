@@ -38,8 +38,9 @@ class ContactsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactsTableViewCell
 
+        cell.configure(with: viewModel.contacts[indexPath.row])
 
         return cell
     }
@@ -54,23 +55,14 @@ class ContactsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-
     
-    // MARK: - Navigation
-
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
-    
-
 }
 
 extension ContactsTableViewController {
     @objc func presentAddContact() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let addContactVC = storyboard.instantiateViewController(withIdentifier: "AddContactViewController") as! AddContactViewController
+        addContactVC.delegete = self
         let navController = UINavigationController(rootViewController: addContactVC)
         
         navController.modalPresentationStyle = .pageSheet
@@ -81,5 +73,13 @@ extension ContactsTableViewController {
         }
 
         present(navController, animated: true, completion: nil)
+    }
+}
+
+extension ContactsTableViewController: ContactDelegete {
+    func addContact(_ contact: Contact) {
+        viewModel.contacts.append(contact)
+        viewModel.addContact(contact)
+        self.tableView.reloadData()
     }
 }

@@ -13,8 +13,4 @@ class AddContactViewModel {
     init(contactService: ContactServiceProtocol) {
         self.contactService = contactService
     }
-    
-    func addContactWith(name: String, phoneNumber: String) {
-        contactService.addContactFrom(name,and: phoneNumber)
-    }
 }

@@ -11,6 +11,7 @@ class AddContactViewController: UIViewController {
     private let viewModel = AddContactViewModel(
         contactService: ContactService()
     )
+    var delegete: ContactDelegete?
     private var doneButton: UIBarButtonItem!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -21,7 +22,6 @@ class AddContactViewController: UIViewController {
         addTextFieldTarget()
     }
 }
-
 
 // MARK: Navigation Bar Setup
 extension AddContactViewController {
@@ -41,16 +41,16 @@ extension AddContactViewController {
         doneButton.isEnabled = false  // Start disabled
         navigationItem.rightBarButtonItem = doneButton
     }
-    
+
     private func makeCancelButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-                title: "Cancel",
-                style: .plain,
-                target: self,
-                action: #selector(cancelTapped)
-            )
+            title: "Cancel",
+            style: .plain,
+            target: self,
+            action: #selector(cancelTapped)
+        )
     }
-    
+
     private func makeTitle() {
         self.title = "New Contact"
     }
@@ -70,7 +70,7 @@ extension AddContactViewController {
             for: .editingChanged
         )
     }
-    
+
     @objc private func textFieldsDidChange() {
         let nameIsNotEmpty = !(nameTextField.text ?? "").isEmpty
         let phoneIsNotEmpty = !(phoneTextField.text ?? "").isEmpty
@@ -84,15 +84,15 @@ extension AddContactViewController {
         if let nameText = nameTextField.text,
             let phoneText = phoneTextField.text
         {
-            viewModel.addContactWith(name: nameText, phoneNumber: phoneText)
+            delegete?.addContact(Contact(name: nameText, phone: phoneText))
         }
         dismissView()
     }
-    
+
     @objc func cancelTapped() {
         dismissView()
     }
-    
+
     private func dismissView() {
         dismiss(animated: true, completion: nil)
     }

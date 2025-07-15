@@ -18,13 +18,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fWk-nP-5Uc">
-                                <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="71" id="fWk-nP-5Uc" customClass="ContactsTableViewCell" customModule="SimpleContactsListApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fWk-nP-5Uc" id="5xO-2Z-4PJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usef Elbedwehy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFb-8g-fGi">
+                                            <rect key="frame" x="30.000000000000007" y="10" width="122.66666666666669" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="01069300055" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-kD-EQB">
+                                            <rect key="frame" x="30" y="38" width="99" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" systemColor="tintColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lFb-8g-fGi" firstAttribute="leading" secondItem="5xO-2Z-4PJ" secondAttribute="leading" constant="30" id="HUa-e2-is3"/>
+                                        <constraint firstItem="lFb-8g-fGi" firstAttribute="top" secondItem="5xO-2Z-4PJ" secondAttribute="top" constant="10" id="Hra-ts-OCT"/>
+                                        <constraint firstItem="PLH-kD-EQB" firstAttribute="leading" secondItem="5xO-2Z-4PJ" secondAttribute="leading" constant="30" id="U5l-8n-IV8"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PLH-kD-EQB" secondAttribute="trailing" symbolic="YES" id="UNL-8o-1eI"/>
+                                        <constraint firstItem="PLH-kD-EQB" firstAttribute="top" secondItem="lFb-8g-fGi" secondAttribute="bottom" constant="5" id="V1F-Ad-jnK"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lFb-8g-fGi" secondAttribute="trailing" symbolic="YES" id="reR-qJ-CsE"/>
+                                        <constraint firstAttribute="bottom" secondItem="PLH-kD-EQB" secondAttribute="bottom" constant="15" id="ynE-eX-CjA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="lFb-8g-fGi" id="hnj-8q-leV"/>
+                                    <outlet property="phoneLB" destination="PLH-kD-EQB" id="zLd-I2-XmB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJC-pd-G1D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-566" y="118"/>
+            <point key="canvasLocation" x="-567.17557251908397" y="117.60563380281691"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tXQ-KU-JIF">
@@ -53,21 +80,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJg-VQ-JDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1469" y="118"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleContactsListApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="62" y="-650"/>
         </scene>
         <!--Add Contact View Controller-->
         <scene sceneID="lhA-5W-J67">
@@ -130,6 +142,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

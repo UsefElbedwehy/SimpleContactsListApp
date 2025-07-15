@@ -24,5 +24,11 @@ class ContactsViewModel {
         isLoading = true
         contacts = service.getAllContacts()
         isLoading = false
+        didLoadContacts?()
+    }
+    
+    func addContact(_ contact: Contact) {
+        service.addContactFrom(contact.name, and: contact.phone)
+        didLoadContacts?()
     }
 }
