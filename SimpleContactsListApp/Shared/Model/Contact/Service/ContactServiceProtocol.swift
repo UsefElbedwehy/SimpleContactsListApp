@@ -10,4 +10,5 @@ import Foundation
 protocol ContactServiceProtocol {
     func addContactFrom(_ name: String, and phone: String)
     func getAllContacts() -> [Contact]
+    func deleteContact(at index: Int)
 }

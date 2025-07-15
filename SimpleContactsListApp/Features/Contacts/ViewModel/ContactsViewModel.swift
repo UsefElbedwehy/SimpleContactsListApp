@@ -31,4 +31,10 @@ class ContactsViewModel {
         service.addContactFrom(contact.name, and: contact.phone)
         didLoadContacts?()
     }
+    
+    func deleteContact(at index: Int) {
+        contacts.remove(at: index)
+        service.deleteContact(at: index)
+        didLoadContacts?()
+    }
 }

@@ -16,4 +16,8 @@ class ContactService: ContactServiceProtocol {
         let contact = Contact(name: name, phone: phone)
         UserDefaultsManager.shared.saveContact(contact)
     }
+    
+    func deleteContact(at index: Int) {
+        UserDefaultsManager.shared.removeContact(at: index)
+    }
 }
