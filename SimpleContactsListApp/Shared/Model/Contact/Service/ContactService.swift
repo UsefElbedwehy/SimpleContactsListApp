@@ -1,0 +1,15 @@
+//
+//  ContactService.swift
+//  SimpleContactsListApp
+//
+//  Created by Usef on 15/07/2025.
+//
+
+import Foundation
+
+class ContactService: ContactServiceProtocol {
+    func addContactFrom(_ name: String, and phone: String) {
+        let contact = Contact(name: name, phone: phone)
+        UserDefaultsManager.shared.saveContact(contact)
+    }
+}
