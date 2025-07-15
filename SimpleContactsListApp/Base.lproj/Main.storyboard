@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f2k-Ap-lss">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zH7-ZZ-U5q">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,7 +12,7 @@
         <!--Contacts-->
         <scene sceneID="8LZ-ay-7q3">
             <objects>
-                <tableViewController id="f2k-Ap-lss" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Contacts" id="f2k-Ap-lss" customClass="ContactsTableViewController" customModule="SimpleContactsListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ySz-gb-cB0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,13 +72,13 @@
         <!--Add Contact View Controller-->
         <scene sceneID="lhA-5W-J67">
             <objects>
-                <viewController storyboardIdentifier="AddContact" id="DxT-PU-k7Q" customClass="AddContactViewController" customModule="SimpleContactsListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddContactViewController" modalPresentationStyle="pageSheet" id="DxT-PU-k7Q" customClass="AddContactViewController" customModule="SimpleContactsListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ep7-dz-SLf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXv-oQ-eAT">
-                                <rect key="frame" x="30" y="98" width="333" height="21"/>
+                                <rect key="frame" x="30" y="98" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wID-6e-u1X"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jXv-oQ-eAT" firstAttribute="leading" secondItem="ep7-dz-SLf" secondAttribute="leading" constant="30" id="4N8-qV-QSn"/>
                             <constraint firstItem="hJh-rU-IeO" firstAttribute="top" secondItem="jXv-oQ-eAT" secondAttribute="bottom" constant="5" id="8FB-uk-T5y"/>
@@ -113,7 +113,7 @@
                             <constraint firstItem="wID-6e-u1X" firstAttribute="trailing" secondItem="AoB-yq-Qzy" secondAttribute="trailing" constant="30" id="WRc-2o-H8T"/>
                             <constraint firstItem="hJh-rU-IeO" firstAttribute="leading" secondItem="wID-6e-u1X" secondAttribute="leading" constant="30" id="YU1-jT-wge"/>
                             <constraint firstItem="MTg-3u-Pax" firstAttribute="leading" secondItem="wID-6e-u1X" secondAttribute="leading" constant="30" id="cMh-YG-q9i"/>
-                            <constraint firstAttribute="trailing" secondItem="jXv-oQ-eAT" secondAttribute="trailing" constant="30" id="qAr-TM-0ha"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jXv-oQ-eAT" secondAttribute="trailing" symbolic="YES" id="qAr-TM-0ha"/>
                             <constraint firstItem="AoB-yq-Qzy" firstAttribute="leading" secondItem="wID-6e-u1X" secondAttribute="leading" constant="30" id="wcM-LB-tNh"/>
                         </constraints>
                     </view>
