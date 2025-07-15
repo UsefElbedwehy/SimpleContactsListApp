@@ -44,19 +44,19 @@ class ContactsTableViewController: UITableViewController {
 
         return cell
     }
-
     
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             viewModel.deleteContact(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let name = viewModel.contacts[indexPath.row].name
+        let phone = viewModel.contacts[indexPath.row].phone
+        navigateToContactDetails(with: name, and: phone)
+    }
 }
 
 extension ContactsTableViewController {
@@ -74,6 +74,16 @@ extension ContactsTableViewController {
         }
 
         present(navController, animated: true, completion: nil)
+    }
+    
+    func navigateToContactDetails(with name: String, and phone: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let contactDetailsVC = storyboard.instantiateViewController(withIdentifier: "contactDetailsViewController") as? ContactDetailsViewController else { return }
+
+        contactDetailsVC.name = name
+        contactDetailsVC.phone = phone
+
+        navigationController?.pushViewController(contactDetailsVC, animated: true)
     }
 }
 
