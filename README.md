@@ -8,7 +8,7 @@ A simple iOS app built with **Swift** and **UIKit** using the **MVVM architectur
 
 The app follows the **MVVM (Model-View-ViewModel)** architecture:
 
-### 🧩 Layer Roles
+###  Layer Roles
 
 - **Model**: Represents the contact data (`Contact` struct).
 - **View**: UIKit Views/ViewControllers (`ContactsViewController`, etc.).
@@ -30,26 +30,26 @@ This keeps all related logic encapsulated and easy to maintain.
 - Uses `UITableView` for presentation.
 - Press the `+` button to add new contact.
 
-![Contacts Screen](images/contacts-screen.png)
+![Contacts Screen](Images/contacts-screen.png)
 
 ### Details Contacts 
 - Tapping a contact shows their **name** and **phone number**.
 - Navigates using `UINavigationController`.
 
-![Contact Details](images/contact-details.png)
+![Contact Details](Images/contact-details.png)
 
 ### AddContact Contacts 
 - Modal sheet to input a new contact’s name and phone number.
 - Input validation enables **Done** only if both fields are filled.
 - Uses delegation to pass data back to the contacts list.
 
-![Add Contact](images/add-contact.png)
+![Add Contact](Images/add-contact.png)
 
 ### delete a contact
 - Swipe left on a contact to delete it.
 - Updates the contact list immediately.
 
-![Delete Contact](images/delete-contact.png)
+![Delete Contact](Images/delete-contact.png)
 
 ##  Project Highlights
 
