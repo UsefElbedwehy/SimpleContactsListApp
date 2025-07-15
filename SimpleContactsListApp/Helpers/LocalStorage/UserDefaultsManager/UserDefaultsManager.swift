@@ -33,3 +33,13 @@ final class UserDefaultsManager {
         saveContacts(contacts)
     }
 }
+
+extension UserDefaultsManager {
+    func removeContact(at index: Int) {
+        var contacts = loadContacts()
+        if contacts.count > index {
+            contacts.remove(at: index)
+        }
+        saveContacts(contacts)
+    }
+}

@@ -24,3 +24,4 @@ Each **feature** (e.g., Contacts, AddContact, ContactDetails) has its **own fold
 This keeps all related logic encapsulated and easy to maintain.
 
 --- 
+
